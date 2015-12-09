@@ -14,13 +14,14 @@
 ActiveRecord::Schema.define(version: 20151209044749) do
 
   create_table "products", force: :cascade do |t|
+    t.text     "long_description"
     t.string   "brand"
     t.string   "name"
     t.text     "description"
     t.string   "image_url"
     t.decimal  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

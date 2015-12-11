@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<b><h2 style="color:yellow; text-align:center" class="column"> Cart Status </h2></b>
+<table>
+	<% for item in @cart.line_items %>
+	<tr>
+		<td><%= item.quantity %></td>
+		<td><%= item.product.brand %> : <%= item.product.name %></td>
+	</tr>
+	<% end %>
+	<tr>
+		<td colspan="2">Total</td>
+		<td><%= number_to_currency(@cart.total_price) %></td>
+	</tr>
+</table>
+
+<%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you Sure?' %>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>

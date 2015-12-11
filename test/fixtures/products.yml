@@ -4,6 +4,7 @@ one:
   brand: MyString
   name: MyString
   description: MyText
+  long_description: MyText
   image_url: MyString
   price: 9.99
 
@@ -11,5 +12,14 @@ two:
   brand: MyString
   name: MyString
   description: MyText
+  long_description: MyText
   image_url: MyString
   price: 9.99
+
+farhan_valid:
+  brand: BSN
+  name: Whey
+  description: This is my description
+  long_description: This is long description
+  image_url: three.png
+  price: 19.99

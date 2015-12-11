@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<b><h2 style="color:yellow; text-align:center" class="column">Available Products</h2></b>
+<div class="column">
+  <div class="row">
+  <ul style="list-style-type: none">
+    <% Product.all.each do |product| %>
+      <li class="large-3 medium-4 small-12 column">
+        <div>
+          <%= link_to product do %>
+          <%= image_tag(product.image_url, alt: product.name) %>
+          <div>
+            <h5 style="color:yellow; text-align:center" ><b><%= product.brand %> : <%= product.name %></b></h5>
+          </div>
+          <div>
+            <h6 style="color:white; text-align:justify" ><%= product.description %></h6>
+          </div>
+          </hr>
+          <center><div class="button round">
+            See Details
+          </div></center>
+          <% end %>
+        </div>
+      </li>
+      <% end %>
+      </ul>
+  </div>
+</div>
+
+<div class="row">
+<div class="large-12 columns">
+<div class="panel">
+<h4>Get in touch!</h4>
+<div class="row">
+<div class="large-9 columns">
+<h1>Listing Users</h1>
+
+</div>
+<div class="large-3 columns">
+<a href="#" class="radius button right">Contact Us</a>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -3,14 +3,16 @@
 <b><h2 style="color:yellow; text-align:center" class="column"> <%= @product.brand %> : <%= @product.name %> </h2></b>
 
 <div class="row">
-  <div class="large-6 columns"><%= image_tag @product.image_url %></div>
-  <div class="large-6 columns" style="color:white; text-align:justify"><%= @product.long_description %></div>
-</div>
-
-<div class="row">
-  <center><div class="button round">
-            Purchase Now
+  <center><div class="large-6 columns"><%= image_tag @product.image_url %></br></br></br>
+  		<div>
+  		<%= button_to line_items_path(:product_id => @product) do %>
+  		 		<center><div class="button round column">
+            Add to Cart
           </div></center>
+          <% end %>
+        </div>
+  </div></center>
+  <div class="large-6 columns" style="color:white; text-align:justify"><%= @product.long_description %></div>
 </div>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

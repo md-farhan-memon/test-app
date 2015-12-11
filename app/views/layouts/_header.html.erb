@@ -4,10 +4,23 @@
     </div>
       <div class="large-9 columns">
         <ul class="right button-group">
-          <li><a href="/" class="button">Home</a></li>
-          <li><a href="#" class="button">Add</a></li>
-          <li><a href="#" class="button">List</a></li>
-          <li><a href="#" class="button">FeedBack</a></li>
+        <li><a href="/" class="button">Home</a></li>
+        <% if session[:user_id] %>
+        <%= link_to logout_path, :method => :delete do %>
+        <li class="button">Logout</li>
+        <% end %>
+        <%= link_to carts_path do %>
+          <li class="button">Cart</li>
+          <% end %>
+        <% end %>
+        <% if !session[:user_id] %>
+          <li><a href="/login" class="button">Log In</a></li>
+          <% end %>
+        
+          
+          
         </ul>
       </div>
     </div>
+
+

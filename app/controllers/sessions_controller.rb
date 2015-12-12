@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   	if user = User.authenticate(params[:name], params[:password])
   		session[:user_id] = user.id
   		redirect_to admin_url
-  	else
+     	else
   		redirect_to login_url, :alert => "Invalid input"
   	end
   end

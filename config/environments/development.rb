@@ -38,4 +38,24 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  # 
+#   force_ssl if: :ssl_configured?
+
+#   def ssl_configured?
+#     !Rails.env.development?
+#   end
+# end
+  
+
+  config.action_mailer.delivery_method = :smtp 
+  ActionMailer::Base.smtp_settings = {   
+  :address => "smtp.gmail.com",   
+  :port => 587,   
+  :domain => "gmail.com",   
+  :user_name => "fmart.test",   
+  :password =>  "15324268",   
+  :authentication => "plain",   
+  :enable_starttls_auto => true  
+}
+
 end
